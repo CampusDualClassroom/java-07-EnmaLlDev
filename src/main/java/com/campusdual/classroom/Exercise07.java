@@ -1,10 +1,17 @@
 package com.campusdual.classroom;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Exercise07 {
 
     public static void main(String[] args) {
-
+        positionInAList(5);
+        //
+        sumFirstNaturalNumbers(5);
+        // numeros positivos
+        showFirstNaturalNumbers(5);
     }
 
     //TODO ↓
@@ -14,19 +21,48 @@ public class Exercise07 {
     // Si lo encuentra, que imprima el siguiente mensaje → El elemento X se encuentra en la posición: Y
     // Si NO lo encuentra, que imprima el siguiente mensaje → El elemento X no se encuentra en la lista.
     public static void positionInAList(int num) {
+        List<Integer> listLess = new ArrayList<>();
+        // lista con los números del 10 al 1
+        for (int i = 10; i > 0; i--) {
+            listLess.add(i);
+        }
 
+        // si el número no está en la lista
+        for (int i = 0; i < listLess.size(); i++) {
+            if (listLess.get(i) == num) {
+                System.out.println("El elemento " + num + " se encuentra en la posición: " + i);
+                return;
+            }
+            else if (i == listLess.size()-1){
+                System.out.println("El elemento " + num + " no se encuentra en la lista.");
+            }
+        }
     }
 
     //TODO ↓
     // Que imprima como mensaje la suma de los primeros N números positivos
     public static void sumFirstNaturalNumbers(int num) {
-
+        int sum = 0;
+        for (int i = 1; i <= num; i++) {
+            if (i == num) {
+                System.out.print(i);
+            } else {
+                System.out.print(i + " + ");
+            }
+            sum += i;
+        }
+        System.out.println(" = " + sum);
     }
 
     //TODO ↓
     // Que imprima por pantalla los N primeros números positivos
     public static void showFirstNaturalNumbers(int num) {
-
+        for (int i = 1; i <= num; i++) {
+            if (i > 0 ) {
+                System.out.print(i);
+            } else {
+                System.out.print(i + " numero negativo ");
+            }
+        }
     }
-
 }
